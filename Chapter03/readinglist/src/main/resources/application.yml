@@ -1,6 +1,8 @@
 spring:
   thymeleaf:
     cache: false
+  profiles:
+    active: default
 
 #server:
 #  port: 8443
@@ -16,3 +18,22 @@ spring:
 
 amazon:
   associatedId: habuma-20
+logging:
+  level:
+    root: info
+
+---
+spring:
+  profiles: development
+logging:
+  level:
+    root: debug
+
+---
+spring:
+  profiles: production
+logging:
+  path: /tmp/
+  file: bookworm.log
+  level:
+    root: warn
