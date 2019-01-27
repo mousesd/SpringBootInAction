@@ -25,3 +25,4 @@ public class App02Application implements WebMvcConfigurer {
         resolvers.add(new ReaderHandlerMethodArgumentResolver());
     }
 }
+
