@@ -1,0 +1,39 @@
+spring:
+  thymeleaf:
+    cache: false
+  profiles:
+    active: default
+
+#server:
+#  port: 8443
+#  ssl:
+#    key-store: file:///Users/mousesd/Documents/Spring/SpringBootInAction/Lib/springboot.jks
+#    key-store-password: letmein
+#    key-password: letmein
+
+#logging:
+#  level:
+#    root: warn
+#    org.springframework.security: debug
+
+amazon:
+  associatedId: habuma-20
+logging:
+  level:
+    root: info
+
+---
+spring:
+  profiles: development
+logging:
+  level:
+    root: debug
+
+---
+spring:
+  profiles: production
+logging:
+  path: /tmp/
+  file: bookworm.log
+  level:
+    root: warn
