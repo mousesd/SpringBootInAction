@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.19.RELEASE'
+    }
+}
+
+plugins {
+    id 'groovy'
+}
+
+apply plugin: 'org.springframework.boot'
+
+group = 'net.homenet'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.codehaus.groovy:groovy'
+    runtime 'com.h2database:h2'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.springframework.security:spring-security-test'
+
+    // Add the required dependency for GORM to out project
+    compile 'org.grails:gorm-hibernate5-spring-boot:6.1.6.RELEASE'
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
+    compile 'org.hibernate:hibernate-ehcache:5.1.0.Final'
+    compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
+}
